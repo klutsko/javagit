@@ -1,4 +1,7 @@
+<<<<<<< HEAD
 package Lesson2; 2 3 56565656 1
+=======
+>>>>>>> c09cceac853eec70e34881640330ade9152fcf89
 
 import java.util.Random;
 import java.util.Scanner;
