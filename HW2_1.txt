@@ -1,0 +1,41 @@
+package Lesson2;
+
+import java.util.Random;
+import java.util.Scanner;
+
+public class HW2 {
+    public static void main(String[] args) {
+        Random game = new Random();
+
+        Scanner sc = new Scanner(System.in);
+
+
+        int answerFromApp = 0, answerFromUser = 0; //creating 2 fields which we will compare
+
+        do {
+            System.out.println("Enter value from 1 to 10");
+            answerFromUser = sc.nextInt();
+            answerFromApp = 1 + game.nextInt(10);
+
+            if (answerFromUser < 1) {
+                System.out.println("Wrong range. You should enter digit from 1 to 10. Start again");
+                break;
+
+            }
+            if (answerFromUser > 10) {
+                System.out.println("Wrong range. You should enter digit from 1 to 10. Start again");
+                break;
+
+            }
+            if (answerFromApp != answerFromUser) {
+                System.out.println("You didn't guess. Answer from app is  " + answerFromApp + " .");
+            } else {
+                System.out.println("You are correct! Congrats! Your answer is  : " + answerFromUser + "Answer from app is  " + answerFromApp + " .");
+            }
+
+        }
+        while (answerFromApp != answerFromUser);
+
+
+    }
+}
