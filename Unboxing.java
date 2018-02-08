@@ -10,7 +10,7 @@ public class Unboxing {
         int i = 127;
         int in = 129;
         short sh = 44;
-        char ch1 = 'h';
+        char ch1 = 'w';
 
         byte b2 = (byte) in;
 
