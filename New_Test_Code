@@ -1,6 +1,6 @@
-package Lesson2;
+package Lesson2; 
 
-import java.util.Scanner;
+import java.util.Scanner; new changes
 
 public class HW2_2 {
 
