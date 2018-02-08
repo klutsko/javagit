@@ -1,6 +1,6 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
-package Lesson2;  ks_modified2_3
+package Lesson2;  ks_modified2_3_4w
 =======
 >>>>>>> c09cceac853eec70e34881640330ade9152fcf89
 
