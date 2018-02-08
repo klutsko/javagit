@@ -1,6 +1,6 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
-package Lesson2;  
+package Lesson2;  ks_modified2
 =======
 >>>>>>> c09cceac853eec70e34881640330ade9152fcf89
 
@@ -8,7 +8,7 @@ import java.util.Random;
 import java.util.Scanner;  
 >>>>>>> c6acf3bd5b0618adc1527946667fca707606c4fe
 
-public class HW2 { ks_modified
+public class HW2 { 
     public static void main(String[] args) {
         Random game = new Random();
 
