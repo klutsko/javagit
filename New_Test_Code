@@ -1,0 +1,31 @@
+package Lesson2;
+
+import java.util.Scanner;
+
+public class HW2_2 {
+
+    public static void main(String[] args) {
+
+
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter some 2 digits value ");
+        int sum = 0;
+
+
+        int number = sc.nextInt();
+
+
+        if (number > 99 || number < 10) {
+            System.out.println("Number should be from 10 to 99. You entered: " + number);
+
+
+        }
+
+        while (number != 0) {
+
+            sum += (number % 10);  //отримуємо залишок від % по модулю 
+            number /= 10;  // зменшуємо число
+                    }
+        System.out.println(sum + " ");
+    }
+}
