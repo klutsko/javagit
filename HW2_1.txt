@@ -10,7 +10,7 @@ public class HW2 {
     public static void main(String[] args) {
         Random game = new Random();
 
-        Scanner sc = new Scanner(System.in);
+        Scanner sc = new Scanner(System.in); change
 
 
         int answerFromApp = 0, answerFromUser = 0; //creating 2 fields which we will compare
