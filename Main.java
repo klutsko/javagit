@@ -22,12 +22,14 @@ public class Main {
         ginger.fly(1);
         ginger.look();
 
+        
+
 
 
     }
 }
 
-abstract class Animal {
+ class Animal {
     private String name;
     private int age;
 
@@ -40,7 +42,7 @@ abstract class Animal {
     Animal() {
     }
 
-    abstract void   look();
+    public void   look(){}
 
 
 }
@@ -52,7 +54,7 @@ class Dog extends Animal {
 
 
     Dog(int height) {
-        super("Chappi", 5);
+        super("Default", 1);
         this.height = height;
 
     }
@@ -98,7 +100,7 @@ class Husky extends Dog {
 
 class Owl extends Animal {
 
-    int countOfEars;
+    private int countOfEars;
 
     Owl(int countOfEars) {
         this.countOfEars = countOfEars;
