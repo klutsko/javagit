@@ -11,10 +11,10 @@ public class Demo {
 
     public static String read(String path) {
         StringBuilder stringBuilder = new StringBuilder();
-        BufferedReader reader = null;
-        try {
+        //BufferedReader reader = null;
+        try (BufferedReader reader = new BufferedReader(new FileReader(path))) {
 
-            reader = new BufferedReader(new FileReader(path));
+
             String currentString;
 
             while ((currentString = reader.readLine()) != null) {
@@ -26,16 +26,12 @@ public class Demo {
 
         } catch (IOException e) {
             e.printStackTrace();
-        } finally {
+        } /*finally {
             try {
                 reader.close();
             } catch (IOException e) {
                 e.printStackTrace();
-            }
-
-        }
-
-
+            }*/
         return stringBuilder.toString();
 
     }
