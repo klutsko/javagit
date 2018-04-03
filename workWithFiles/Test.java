@@ -22,10 +22,9 @@ public class Test {
         }
 
         ArrayList<String> names = new ArrayList<>();
-       // long startTime = System.currentTimeMillis();
+     
         getFiles(path, gap, file, names);
-     //   long timeSpent = System.currentTimeMillis() - startTime;
-      //  System.out.println(timeSpent);
+ 
 
 
 
