@@ -1,1 +1,43 @@
 
+/*select   departments.dept_name, count(dept_emp.emp_no)
+ from  departments  Join dept_emp
+on departments.dept_no =dept_emp.dept_no 
+group by departments.dept_no;
+
+select concat(substr("Intelligent Decision Support Systems",1,11), substr("Intelligent Decision Support Systems", 29, 36)) as 'Test';
+
+select current_date();
+
+select dept_name    from departments  
+order by dept_name;
+
+select  first_name, last_name, hire_date, curdate()-employees.hire_date
+from employees
+where timestampdiff(YEAR, employees.hire_date, curdate()) <20;
+
+select  salaries.salary,   departments.dept_name, salaries.to_date  from salaries
+join employees on salaries.emp_no = employees.emp_no
+join dept_emp on dept_emp.emp_no = employees.emp_no
+join departments on departments.dept_no= dept_emp.dept_no
+group by salaries.salary,  departments.dept_name,salaries.to_date
+having  salaries.to_date  BETWEEN '2000-01-01' AND '2000-12-31';
+
+
+ 
+
+select  COUNT(employees.emp_no)
+ from  employees;
+ 
+ 
+ 
+ 
+select  COUNT(employees.emp_no), departments.dept_name
+ from  employees  join dept_emp
+ on   dept_emp.emp_no = employees.emp_no
+join departments on departments.dept_no= dept_emp.dept_no
+group by departments.dept_name
+
+ 
+
+
+*/
