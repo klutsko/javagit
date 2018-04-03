@@ -1,0 +1,49 @@
+/*CREATE DATABASE shop;
+
+CREATE TABLE Orders (
+    OrderID int NOT NULL,
+    OrderPrice  int,
+    OrderDate int,
+    UsersID int,
+    StatusID int,
+    PRIMARY KEY (OrderID),
+    FOREIGN KEY (UsersID) REFERENCES Users(ID),
+     FOREIGN KEY (StatusID) REFERENCES Status(ID)
+     
+);
+
+DROP TABLE Order_Positions;
+
+CREATE TABLE Order_Positions (
+    OrderID int  NOT NULL PRIMARY KEY,
+    PositionID  int,
+    Quantity int,
+     FOREIGN KEY (PositionID) REFERENCES Positions(ID)
+     
+);
+
+CREATE TABLE Users (
+   ID int NOT NULL PRIMARY KEY,
+    UsersNames  varchar(255),
+    UsersEmails varchar(255)
+     
+);
+
+
+CREATE TABLE Status (
+   ID int  NOT NULL PRIMARY KEY,
+    StatusName  varchar(255)
+);
+
+DROP TABLE Positions;
+
+CREATE TABLE Positions (
+   ID int NOT NULL PRIMARY KEY,
+    PositionName  varchar(255),
+    POsitionsPrice  int,
+    PositionsQuantity int
+	
+);
+
+*/
+ 
