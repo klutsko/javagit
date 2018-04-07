@@ -1,0 +1,29 @@
+/*CREATE DATABASE social;
+
+CREATE TABLE Users (
+    UserID int NOT NULL,
+    UserName  varchar(255),
+    PRIMARY KEY (UserID)
+  
+);
+
+CREATE TABLE Photos (
+    PhotoID int NOT NULL,
+    UsersID int,
+    PhotoName  varchar(255),
+    PhotoAuthor  varchar(255),
+    PRIMARY KEY (PhotoID),
+     FOREIGN KEY (UsersID) REFERENCES Users(UserID)
+  
+);
+
+CREATE TABLE Comments (
+    CommentsID int NOT NULL,
+    EnteredText  varchar(255),
+	Author  varchar(255),
+	IDPhoto int ,
+     PRIMARY KEY (CommentsID),
+     FOREIGN KEY (IDPhoto) REFERENCES Photos(PhotoID)
+   
+  
+);*/
