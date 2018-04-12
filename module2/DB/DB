@@ -1,11 +1,22 @@
 /*CREATE DATABASE social;
 
+select * from Users;
+select * from Photos;
+select * from Comments;
+
+
+select * from Users join Photos
+on Users.UserID = Photos.UsersID;
+
 CREATE TABLE Users (
     UserID int NOT NULL,
     UserName  varchar(255),
     PRIMARY KEY (UserID)
   
 );
+
+INSERT INTO Users (UserID, UserName)
+VALUES (2, "Jerry");
 
 CREATE TABLE Photos (
     PhotoID int NOT NULL,
@@ -17,6 +28,9 @@ CREATE TABLE Photos (
   
 );
 
+INSERT INTO Photos (PhotoID, UsersID,PhotoName,PhotoAuthor)
+VALUES (2, 1,"Stop","John");
+
 CREATE TABLE Comments (
     CommentsID int NOT NULL,
     EnteredText  varchar(255),
@@ -26,4 +40,8 @@ CREATE TABLE Comments (
      FOREIGN KEY (IDPhoto) REFERENCES Photos(PhotoID)
    
   
-);*/
+);
+INSERT INTO Comments (CommentsID, EnteredText,Author,IDPhoto)
+VALUES (1,"haha", "John",2);
+
+*/
