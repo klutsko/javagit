@@ -1,0 +1,62 @@
+
+import javax.servlet.ServletException;
+        import javax.servlet.annotation.WebServlet;
+        import javax.servlet.http.HttpServlet;
+        import javax.servlet.http.HttpServletRequest;
+        import javax.servlet.http.HttpServletResponse;
+        import java.io.IOException;
+        import java.io.PrintWriter;
+        import java.sql.Connection;
+        import java.sql.DriverManager;
+        import java.sql.PreparedStatement;
+        import java.sql.SQLException;
+
+@WebServlet("/deleteRowFromTable")
+public class deleteRowFromTable extends HttpServlet {
+
+    // database connection settings
+    private String dbURL = "jdbc:mysql://localhost:3306/usersData";
+    private String dbUser = "root";
+    private String dbPass = "161617Kk";
+
+    @Override
+    protected void doPost(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse)
+            throws ServletException, IOException {
+
+        Connection conn = null;
+        PreparedStatement statement = null;
+
+        try {
+
+            DriverManager.registerDriver(new com.mysql.jdbc.Driver());
+
+            conn = DriverManager.getConnection(dbURL, dbUser, dbPass);
+            PrintWriter pw = httpServletResponse.getWriter();
+            String sql2 = "Delete from myUser";
+
+            statement  = conn.prepareStatement(sql2);
+            statement.executeUpdate();
+            pw.println("Row is deleted Successfully");
+
+            statement.executeUpdate();
+            //statement.executeUpdate(sql2);
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        } finally {
+            if (conn != null) {
+                // closes the database connection
+                try {
+                    conn.close();
+                } catch (SQLException ex) {
+                    ex.printStackTrace();
+                }
+            }
+
+
+        }
+
+
+    }
+
+
+}
