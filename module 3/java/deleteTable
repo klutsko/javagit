@@ -1,0 +1,61 @@
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+
+@WebServlet("/deleteTable")
+public class deleteTable extends HttpServlet {
+
+    // database connection settings
+    private String dbURL = "jdbc:mysql://localhost:3306/usersData";
+    private String dbUser = "root";
+    private String dbPass = "161617Kk";
+
+    @Override
+    protected void doPost(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse)
+            throws ServletException, IOException {
+
+        Connection conn = null;
+        PreparedStatement statement = null;
+
+        try {
+
+            DriverManager.registerDriver(new com.mysql.jdbc.Driver());
+
+            conn = DriverManager.getConnection(dbURL, dbUser, dbPass);
+            PrintWriter pw = httpServletResponse.getWriter();
+            String sql3 = "Drop Table myUser;";
+
+            statement  = conn.prepareStatement(sql3);
+            statement.executeUpdate();
+            pw.println("Table is deleted Successfully");
+
+            statement.executeUpdate();
+            //statement.executeUpdate(sql2);
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        } finally {
+            if (conn != null) {
+                // closes the database connection
+                try {
+                    conn.close();
+                } catch (SQLException ex) {
+                    ex.printStackTrace();
+                }
+            }
+
+
+        }
+
+
+    }
+
+
+}
